@@ -1,7 +1,7 @@
 package edu.nku.csc364.bst;
 
 /**
- * Created by bb77872 on 10/18/16.
+ * A node to capture the data for a Huffman Tree
  */
 public class HuffmanNode {
 
