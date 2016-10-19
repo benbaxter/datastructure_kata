@@ -52,7 +52,7 @@ import static com.google.common.truth.Truth.assertThat;
  * 1001011
  *
  */
-public class _5HuffmanDecodingTest {
+public class _6HuffmanDecodingTest {
 
     HuffmanTree tree;
 

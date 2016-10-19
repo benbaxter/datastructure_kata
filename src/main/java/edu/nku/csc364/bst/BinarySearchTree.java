@@ -93,6 +93,14 @@ public class BinarySearchTree {
         return order;
     }
 
+    public boolean isBST() {
+        throw new UnsupportedOperationException("isBST() is not implemented yet");
+    }
+
+    public boolean isBSTWithoutBuffer() {
+        throw new UnsupportedOperationException("isBSTWithoutBuffer() is not implemented yet");
+    }
+
     public List<Integer> inorder() {
         List<Integer> inorder = new ArrayList<Integer>();
         inorder(root, inorder);
@@ -108,4 +116,7 @@ public class BinarySearchTree {
         inorder(root.getRight(), path);
     }
 
+    protected void setRoot(Node root) {
+        this.root = root;
+    }
 }
