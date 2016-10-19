@@ -1,12 +1,9 @@
 package edu.nku.csc364.list;
 
-import com.google.common.truth.Truth;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -66,6 +63,8 @@ public class _1LinkedListRemoveDupsTest {
         list.insert(7);
         list.insert(8);
         list.insert(7);
+        list.insert(7);
+        list.insert(7);
         list.insert(9);
         list.insert(7);
 
@@ -79,6 +78,8 @@ public class _1LinkedListRemoveDupsTest {
 
         list.insert(7);
         list.insert(8);
+        list.insert(7);
+        list.insert(7);
         list.insert(7);
         list.insert(9);
         list.insert(7);
