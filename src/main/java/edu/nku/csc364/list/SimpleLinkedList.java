@@ -1,9 +1,7 @@
 package edu.nku.csc364.list;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * A simple implementation of a linked list.
@@ -85,7 +83,18 @@ public class SimpleLinkedList<T> {
      * i - 1. That is,they would have collided.
      */
     public boolean hasLoop() {
-        throw new UnsupportedOperationException("hasLoop has not been implemented");
+        Node<T> slow = head;
+        Node<T> fast = head;
+
+        while( fast != null && fast.getNext() != null ) {
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+            if( slow.equals(fast) ) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public Node<T> getFirst() {

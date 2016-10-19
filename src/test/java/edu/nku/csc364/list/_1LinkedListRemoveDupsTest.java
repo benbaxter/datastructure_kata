@@ -3,11 +3,11 @@ package edu.nku.csc364.list;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.common.truth.Truth.assertWithMessage;
 
 /**
  * Implement {@link SimpleLinkedList#removeDups()} and
