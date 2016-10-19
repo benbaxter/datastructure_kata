@@ -94,15 +94,37 @@ public class BinarySearchTree {
     }
 
     public boolean isBST() {
-        throw new UnsupportedOperationException("isBST() is not implemented yet");
+
+        List<Integer> inorder = inorder();
+        for( int i = 1; i < inorder.size(); ++i ) {
+            if( inorder.get(i) < inorder.get(i - 1) ) {
+                return false; // "i am larger than the guy before me and that is bad"
+            }
+        }
+
+        return true;
     }
 
     public boolean isBSTWithoutBuffer() {
-        throw new UnsupportedOperationException("isBSTWithoutBuffer() is not implemented yet");
+        return isBSTWithoutBuffer(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
+    }
+
+    boolean isBSTWithoutBuffer(Node root, int max, int min) {
+
+        if( root == null ) {
+            return true;
+        }
+
+        if( root.getData() >= max || root.getData() <= min ) {
+            return false;
+        }
+
+        return isBSTWithoutBuffer(root.getLeft(), root.getData(), min)
+                && isBSTWithoutBuffer(root.getRight(), max, root.getData());
     }
 
     public List<Integer> inorder() {
-        List<Integer> inorder = new ArrayList<Integer>();
+        List<Integer> inorder = new ArrayList<>();
         inorder(root, inorder);
         return inorder;
     }
