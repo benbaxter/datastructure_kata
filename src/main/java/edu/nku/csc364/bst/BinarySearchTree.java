@@ -29,6 +29,14 @@ public class BinarySearchTree {
        return Collections.emptyList();
     }
 
+    public boolean isBST() {
+        throw new UnsupportedOperationException("isBST() is not implemented yet");
+    }
+
+    public boolean isBSTWithoutBuffer() {
+        throw new UnsupportedOperationException("isBSTWithoutBuffer() is not implemented yet");
+    }
+
     public List<Integer> inorder() {
         List<Integer> inorder = new ArrayList<>();
         inorder(root, inorder);
@@ -42,5 +50,9 @@ public class BinarySearchTree {
         inorder(root.getLeft(), path);
         path.add(root.getData());
         inorder(root.getRight(), path);
+    }
+
+    protected void setRoot(Node root) {
+        this.root = root;
     }
 }
