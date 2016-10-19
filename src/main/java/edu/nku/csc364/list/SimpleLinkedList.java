@@ -41,7 +41,30 @@ public class SimpleLinkedList<T> {
 
     }
 
+    /**
+     * An easy way to detect if a linked list has a loop is
+     * through the FastRunner / SlowRunner approach. FastRunner
+     * moves two steps at a time, while SlowRunner moves one
+     * step. Much like two cars racing around a track at different
+     * steps, they must eventually meet.
+     *
+     * An astute reader may wonder if FastRunner might "hopover"
+     * SlowRunner completely, without ever colliding. That's not
+     * possible. Suppose that FastRunner did hop over SlowRunner,
+     * such that SlowRunner is at spot i and FastRunner is at spot
+     * i + 1. In the previous step, SlowRunner would be at spot
+     * i - 1 and FastRunner would at spot ((i + 1) - 2), or spot
+     * i - 1. That is,they would have collided.
+     */
+    public boolean hasLoop() {
+        throw new UnsupportedOperationException("hasLoop has not been implemented");
+    }
+
     public Node<T> getFirst() {
         return head;
+    }
+
+    public void setHead(Node<T> head) {
+        this.head = head;
     }
 }
