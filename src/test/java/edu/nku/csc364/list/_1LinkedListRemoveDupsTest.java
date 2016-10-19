@@ -91,19 +91,12 @@ public class _1LinkedListRemoveDupsTest {
     private void assertListIs(Node<Integer> head, Integer... vals) {
         List<Integer> ints = Arrays.asList(vals);
         Node<Integer> node = head;
-        int size = 0;
+        List<Integer> list = new ArrayList<>();
         while( node != null ) {
-            node = node.getNext();
-            ++size;
-        }
-        assertWithMessage("List size is not correct.").that(size).isEqualTo(ints.size());
-
-        node = head;
-        for( Integer i : ints ) {
-            assertThat(node).isNotNull();
-            assertThat(node.getData()).isEqualTo(i);
+            list.add(node.getData());
             node = node.getNext();
         }
+        assertThat(list).isEqualTo(ints);
     }
 
 }
