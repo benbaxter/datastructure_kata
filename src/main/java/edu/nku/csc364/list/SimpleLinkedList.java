@@ -1,5 +1,8 @@
 package edu.nku.csc364.list;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * A simple implementation of a linked list.
  *
@@ -63,6 +66,10 @@ public class SimpleLinkedList<T> {
 
     public Node<T> middle() {
         return null;
+    }
+
+    public List<T> reverse() {
+       return Collections.emptyList();
     }
 
     public Node<T> getFirst() {
