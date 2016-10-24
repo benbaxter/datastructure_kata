@@ -134,6 +134,10 @@ public class SimpleLinkedList<T> {
         return head;
     }
 
+    public boolean isPalindrome() {
+        return false;
+    }
+
     public void setHead(Node<T> head) {
         this.head = head;
     }
