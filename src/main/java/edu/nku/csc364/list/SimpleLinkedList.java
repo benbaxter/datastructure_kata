@@ -1,9 +1,6 @@
 package edu.nku.csc364.list;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A simple implementation of a linked list.
@@ -135,7 +132,35 @@ public class SimpleLinkedList<T> {
     }
 
     public boolean isPalindrome() {
-        return false;
+        if( head == null ) {
+            return false;
+        }
+
+        Node<T> fast = head;
+        Node<T> slow = head;
+
+        Stack<T> stack = new Stack<>();
+        while(fast != null && fast.getNext() != null ) {
+            stack.push(slow.getData());
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+        }
+
+        //skip the middle element for odd sized lists
+        if( fast != null ) {
+            slow = slow.getNext();
+        }
+
+        while( slow != null ) {
+            T popped = stack.pop();
+            T data = slow.getData();
+            if( ! popped.equals(data) ) {
+                return false;
+            }
+            slow = slow.getNext();
+        }
+
+        return true;
     }
 
     public void setHead(Node<T> head) {
