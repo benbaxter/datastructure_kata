@@ -97,6 +97,11 @@ public class SimpleLinkedList<T> {
         return false;
     }
 
+
+    public Node<T> middle() {
+        return null;
+    }
+
     public Node<T> getFirst() {
         return head;
     }
