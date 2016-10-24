@@ -60,6 +60,11 @@ public class SimpleLinkedList<T> {
         throw new UnsupportedOperationException("hasLoop has not been implemented");
     }
 
+
+    public Node<T> middle() {
+        return null;
+    }
+
     public Node<T> getFirst() {
         return head;
     }
