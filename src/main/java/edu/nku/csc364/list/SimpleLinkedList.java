@@ -1,7 +1,7 @@
 package edu.nku.csc364.list;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple implementation of a linked list.
@@ -112,6 +112,10 @@ public class SimpleLinkedList<T> {
         }
 
         return slow;
+    }
+
+    public List<T> reverse() {
+       return Collections.emptyList();
     }
 
     public Node<T> getFirst() {
