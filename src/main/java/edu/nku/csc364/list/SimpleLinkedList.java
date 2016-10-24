@@ -99,7 +99,19 @@ public class SimpleLinkedList<T> {
 
 
     public Node<T> middle() {
-        return null;
+        if( head == null ) {
+            return null;
+        }
+
+        Node<T> slow = head;
+        Node<T> fast = head;
+        while( fast.getNext() != null && fast.getNext().getNext() != null ) {
+            //we know slow,getNext() will not be null since fast has already passed that node
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+        }
+
+        return slow;
     }
 
     public Node<T> getFirst() {
