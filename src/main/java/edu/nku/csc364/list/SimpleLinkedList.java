@@ -1,7 +1,9 @@
 package edu.nku.csc364.list;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * A simple implementation of a linked list.
@@ -115,7 +117,17 @@ public class SimpleLinkedList<T> {
     }
 
     public List<T> reverse() {
-       return Collections.emptyList();
+        List<T> path = new ArrayList<>();
+        reverse(head, path);
+        return path;
+    }
+
+    private void reverse(Node<T> n, List<T> path) {
+        if (n == null) {
+            return;
+        }
+        reverse(n.getNext(), path);
+        path.add(n.getData());
     }
 
     public Node<T> getFirst() {
