@@ -161,6 +161,8 @@ public class SimpleLinkedList<T> {
 
     public T kthFromLast(int k) {
         Node<T> runner = head;
+        //move runner k steps forward so when current trails, it will
+        //stop k steps from the end of the list once runner hits the end
         while( runner != null && k > 0 ) {
             runner = runner.getNext();
             --k;
