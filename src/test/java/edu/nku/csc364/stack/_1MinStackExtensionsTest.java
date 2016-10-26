@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
  */
 public class _1MinStackExtensionsTest {
 
-    StackExtensions<Integer> stack;
+    StackExtensions stack;
 
     @Before
     public void setup() {
