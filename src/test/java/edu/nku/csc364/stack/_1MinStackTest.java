@@ -12,19 +12,19 @@ import static com.google.common.truth.Truth.assertThat;
  * that will return the min element in the stack in O(1)
  * time as well.
  *
- * Implement {@link StackExtensions#min()} to satisfy the
+ * Implement {@link MinStack#min()} to satisfy the
  * tests.
  *
  * Hint: You may need to modify the pop/push/peek functions.
  *
  */
-public class _1MinStackExtensionsTest {
+public class _1MinStackTest {
 
-    StackExtensions stack;
+    MinStack stack;
 
     @Before
     public void setup() {
-        stack = new StackExtensions();
+        stack = new MinStack();
     }
 
 

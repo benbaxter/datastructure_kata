@@ -6,25 +6,24 @@ import java.util.Stack;
  * A class that encapsulates a stack and performs
  * extra operations such as min, max, sum, etc.
  */
-public class StackExtensions extends Stack<Integer> {
+public class MinStackOptimized extends Stack<Integer> {
 
     //using a java.util.Stack since there is no need to reinvent the wheel
-    private Stack<NodeWithMin> stack;
+    private Stack<Integer> stack;
 
-    public StackExtensions() {
+    public MinStackOptimized() {
         stack = new Stack<>();
     }
 
     @Override
     public Integer push(Integer data) {
-        stack.push(new NodeWithMin(data, Math.min(data, min())));
-        return data;
+        return stack.push(data);
     }
 
     @Override
     public Integer peek() {
         if( ! stack.isEmpty() ) {
-            return stack.peek().getData();
+            return stack.peek();
         } else {
             return null;
         }
@@ -33,16 +32,13 @@ public class StackExtensions extends Stack<Integer> {
     @Override
     public Integer pop() {
         if( ! stack.isEmpty() ) {
-            return stack.pop().getData();
+            return stack.pop();
         } else {
             return null;
         }
     }
 
     public Integer min() {
-        if( stack.isEmpty() ) {
-            return Integer.MAX_VALUE;
-        }
-        return stack.peek().getMin();
+        return null;
     }
 }
