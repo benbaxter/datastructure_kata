@@ -160,7 +160,23 @@ public class SimpleLinkedList<T> {
     }
 
     public T kthFromLast(int k) {
-        return null;
+        Node<T> runner = head;
+        while( runner != null && k > 0 ) {
+            runner = runner.getNext();
+            --k;
+        }
+
+        if( runner == null ) {
+            return null;
+        }
+
+        Node<T> current = head;
+        while(runner != null ) {
+            runner = runner.getNext();
+            current = current.getNext();
+        }
+
+        return current.getData();
     }
 
     public Node<T> getFirst() {
