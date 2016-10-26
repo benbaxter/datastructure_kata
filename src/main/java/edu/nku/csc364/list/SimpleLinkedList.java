@@ -72,12 +72,16 @@ public class SimpleLinkedList<T> {
        return Collections.emptyList();
     }
 
-    public Node<T> getFirst() {
-        return head;
-    }
-
     public boolean isPalindrome() {
         return false;
+    }
+
+    public T kthFromLast(int k) {
+        return null;
+    }
+
+    public Node<T> getFirst() {
+        return head;
     }
 
     public void setHead(Node<T> head) {
