@@ -9,36 +9,33 @@ import java.util.Stack;
 public class MinStackOptimized extends Stack<Integer> {
 
     //using a java.util.Stack since there is no need to reinvent the wheel
-    private Stack<Integer> stack;
+    private Stack<Integer> mins;
 
     public MinStackOptimized() {
-        stack = new Stack<>();
+        mins = new Stack<>();
     }
 
     @Override
     public Integer push(Integer data) {
-        return stack.push(data);
-    }
-
-    @Override
-    public Integer peek() {
-        if( ! stack.isEmpty() ) {
-            return stack.peek();
-        } else {
-            return null;
+        if( data <= min() ) {
+            mins.push(data);
         }
+        return super.push(data);
     }
 
     @Override
     public Integer pop() {
-        if( ! stack.isEmpty() ) {
-            return stack.pop();
-        } else {
+        if( isEmpty() ) {
             return null;
         }
+        int data = super.pop();
+        if( data == min()) {
+            mins.pop();
+        }
+        return data;
     }
 
     public Integer min() {
-        return null;
+        return mins.isEmpty() ? Integer.MAX_VALUE : mins.peek();
     }
 }
