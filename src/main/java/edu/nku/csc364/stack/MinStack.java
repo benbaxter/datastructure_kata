@@ -9,7 +9,7 @@ import java.util.Stack;
 public class MinStack extends Stack<Integer> {
 
     //using a java.util.Stack since there is no need to reinvent the wheel
-    private Stack<NodeWithMin> stack;
+    private Stack<Integer> stack;
 
     public MinStack() {
         stack = new Stack<>();
@@ -17,32 +17,20 @@ public class MinStack extends Stack<Integer> {
 
     @Override
     public Integer push(Integer data) {
-        stack.push(new NodeWithMin(data, Math.min(data, min())));
-        return data;
+        return stack.push(data);
     }
 
     @Override
     public Integer peek() {
-        if( ! stack.isEmpty() ) {
-            return stack.peek().getData();
-        } else {
-            return null;
-        }
+        return stack.peek();
     }
 
     @Override
     public Integer pop() {
-        if( ! stack.isEmpty() ) {
-            return stack.pop().getData();
-        } else {
-            return null;
-        }
+        return stack.pop();
     }
 
     public Integer min() {
-        if( stack.isEmpty() ) {
-            return Integer.MAX_VALUE;
-        }
-        return stack.peek().getMin();
+        return null;
     }
 }

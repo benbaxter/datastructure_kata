@@ -127,10 +127,6 @@ public class SimpleLinkedList<T> {
         path.add(n.getData());
     }
 
-    public Node<T> getFirst() {
-        return head;
-    }
-
     public boolean isPalindrome() {
         if( head == null ) {
             return false;
@@ -161,6 +157,14 @@ public class SimpleLinkedList<T> {
         }
 
         return true;
+    }
+
+    public T kthFromLast(int k) {
+        return null;
+    }
+
+    public Node<T> getFirst() {
+        return head;
     }
 
     public void setHead(Node<T> head) {
