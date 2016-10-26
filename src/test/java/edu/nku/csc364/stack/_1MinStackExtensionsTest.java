@@ -31,12 +31,12 @@ public class _1MinStackExtensionsTest {
     /**
      * The thing with minimums is that they don't change very often.
      * They only change when a smaller element is added.
-     *
+     * <p>
      * One solution is to have just a single int value, minValue, that's
      * a member of the Stack class. When minValue is popped from the stack,
      * we search through the stack to find the new minimum. Unfortunately,
      * this would break the constraint that push and pop operate in 0(1) time.
-     *
+     * <p>
      * To further understand this question, let's walk through it with a short example:
      * push(5); // stack is {5}, min is 5
      * push(6); // stack is {6, 5}, min is 5
@@ -44,28 +44,27 @@ public class _1MinStackExtensionsTest {
      * push(7); // stack is {7, 3, 6, 5}, min is 3
      * pop(); // pops 7. stack is {3, 6, 5}, min is 3
      * pop(); // pops 3. stack is {6., 5}. min is 5.
-     *
+     * <p>
      * Observe how once the stack goes back to a prior state({6, 5}),
      * the minimum also goes back to its prior state (5). This leads
      * us to a second solution.
-     *
+     * <p>
      * If we kept track of the minimum at each state, we would be able
      * to easily know the minimum. We can do this by having each node
      * record what the minimum beneath itself is. Then, to find the min,
      * you just look at what the top element thinks is the min.
-     *
+     * <p>
      * When you push an element onto the stack, the element is given
      * the current minimum. It sets its "local min" to be the min.
-     *
+     * <p>
      * We can accomplish this by making an extra node class that
      * keeps track of a local min.
-     *
+     * <p>
      * class NodeWithMin {
-     *     int data;
-     *     int min;
-     *     //Constructor for member variables
+     * int data;
+     * int min;
+     * //Constructor for member variables
      * }
-     *
      */
     @Test
     public void min() {
@@ -88,7 +87,7 @@ public class _1MinStackExtensionsTest {
 
     @Test
     public void min_emptyStack() {
-        assertThat(stack.min()).isEqualTo(Integer.MIN_VALUE);
+        assertThat(stack.min()).isEqualTo(Integer.MAX_VALUE);
     }
 
     @Test
@@ -122,5 +121,17 @@ public class _1MinStackExtensionsTest {
         stack.pop();
 
         assertThat(stack.min()).isEqualTo(5);
+    }
+
+    @Test
+    public void min_poppedToMany() {
+        stack.push(3);
+        assertThat(stack.min()).isEqualTo(3);
+        //pop it back off
+        stack.pop();
+        assertThat(stack.min()).isEqualTo(Integer.MAX_VALUE);
+        //pop again even though the stack should be empty, we should still handle this
+        stack.pop();
+        assertThat(stack.min()).isEqualTo(Integer.MAX_VALUE);
     }
 }
