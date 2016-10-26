@@ -6,12 +6,12 @@ import java.util.Stack;
  * A class that encapsulates a stack and performs
  * extra operations such as min, max, sum, etc.
  */
-public class StackExtensions extends Stack<Integer> {
+public class MinStack extends Stack<Integer> {
 
     //using a java.util.Stack since there is no need to reinvent the wheel
     private Stack<Integer> stack;
 
-    public StackExtensions() {
+    public MinStack() {
         stack = new Stack<>();
     }
 
