@@ -19,6 +19,11 @@ import static com.google.common.truth.Truth.assertThat;
  * auxiliary stack to minimize the space needed to keep track of the minimum
  * value.
  *
+ * Why might this be more space efficient? Suppose we had a very large stack
+ * and the first element inserted happened to be the minimum. In the previous
+ * problem's solution, we would be keeping n ints, where n is the size of the
+ * stack. In the second solution though, we store just a few pieces of data:
+ * a second stack with one element and the members within this stack.
  */
 public class _2MinStackOptimisedTest {
 
