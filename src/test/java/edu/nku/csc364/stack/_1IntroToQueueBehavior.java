@@ -46,13 +46,13 @@ public class _1IntroToQueueBehavior {
          */
         Queue<String> q = new LinkedList<>();
 
-        q.offer(___);
-        q.offer(___);
-        q.offer(___);
-        q.offer(___);
-        q.offer(___);
-        q.offer(___);
-        q.offer(___);
+        q.offer("Q");
+        q.offer("K");
+        q.offer("Q");
+        q.offer("Q");
+        q.offer("K");
+        q.offer("K");
+        q.offer("K");
 
         StringBuilder sb = new StringBuilder();
         while(! q.isEmpty() ) {
